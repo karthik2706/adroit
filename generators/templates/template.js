@@ -27,8 +27,7 @@ export const styleDefinition = '{component-name}';
  *
  * @return {object} Component instance.
  */
-function create { separate - component - name }
-Instance() {
+function create{separate-component-name}Instance() {
     /**
      * Component instance.
      * @type {Object}
@@ -149,5 +148,4 @@ Instance() {
     return instance;
 }
 
-registerComponent(componentReference, create { separate - component - name }
-    Instance);
+registerComponent(componentReference, create{separate-component-name}Instance);

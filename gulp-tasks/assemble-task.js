@@ -3,17 +3,13 @@ const assemble = require('assemble'),
     extname = require('gulp-extname'),
     browserSync = require('browser-sync');
 
-let config = require('../config'),
-    aemConfig = require('../aem-config');
+let config = require('../config');
 const filePath = config.filePath;
 const configApp = filePath.html;
 
 let distHtml = configApp.compiledSrc;
 
-module.exports = (isAemBuild) => {
-    if (isAemBuild) {
-        distHtml = aemConfig.filePath.html.compiledSrc;
-    }
+module.exports = () => {
 
     // assemble options
     assemble.layouts(configApp.layouts);
