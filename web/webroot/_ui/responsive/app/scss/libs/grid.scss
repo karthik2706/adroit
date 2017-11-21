@@ -1,0 +1,369 @@
+// ****************************************
+// grid
+// ****************************************
+// ----------- Grid logic ---------------
+// // below code commented out for the timebing as LESS dosen't supoort the dynamic placeholders extend
+// // number of columns
+// $total-columns: 12;
+// // Loop through all the columns and generate the width
+// // use :extend() to create grid layout
+// @mixin create-columns($n, $i: 1) when ($i =< $n){
+//   .col-#{$i}-#{$n}{
+//     width: ($i / $n) * 100%;
+//   }
+//   // iterator
+//   @include create-columns($n, ($i + 1));
+// }
+// // create columns
+// @include create-columns($total-columns);
+//-------------------------------------
+// grid container
+$oldIE: false;
+.tf-g {
+    // flex box grid for modren browsers
+    @include ModernBrowser() {
+        display: flex;
+        flex: 0 1 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    @if $oldIE=='false' {
+        @include OldIE() {
+            letter-spacing: -0.31em;
+            text-rendering: optimizespeed;
+        }
+    }
+    // fallback for IE9 and below
+}
+
+.tf-g--inline {
+    display: inline-flex;
+}
+
+.tf-g--no-wrap {
+    @include ModernBrowser() {
+        display: flex;
+    }
+    @if $oldIE=='false' {
+        @include OldIE() {
+            letter-spacing: -0.31em;
+            text-rendering: optimizespeed;
+        }
+    }
+}
+
+.tf-g.gutter-10 {
+    margin: -10px 0 0 -10px;
+}
+
+// flexbox specific helpers
+@include ModernBrowser() {
+    .tf-g__row--reverse {
+        flex-direction: row-reverse;
+    }
+    .tf-g__col--reverse {
+        flex-direction: column-reverse;
+    }
+    .tf-g__col {
+        flex-direction: column;
+    }
+    .tf-g__start {
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .tf-g__center {
+        justify-content: center;
+        text-align: center;
+    }
+    .tf-g__end {
+        justify-content: flex-end;
+        text-align: right;
+    }
+    .tf-g__top {
+        align-items: flex-start;
+    }
+    .tf-g__middle {
+        align-items: center;
+    }
+    .tf-g__bottom {
+        align-items: flex-end;
+    }
+    .tf-g__around {
+        justify-content: space-around;
+    }
+    .tf-g__between {
+        justify-content: space-between;
+    }
+    .tf-g__first {
+        order: -1;
+    }
+    .tf-g__last {
+        order: 1;
+    }
+    .tf-g__strech {
+        align-items: stretch;
+        align-content: stretch;
+    }
+    .tf-g__no-wrap {
+        flex-wrap: nowrap;
+    }
+    .tf-g__wrap {
+        flex-wrap: wrap;
+    }
+    .tf-g__no-grow {
+        flex-grow: 0 !important;
+    }
+    .tf-g--flex-equal {
+        flex: 1 1 0%;
+    }
+}
+
+.col-setting {
+    // flex box column for modren browsers
+    @include ModernBrowser() {
+        flex: 1 0 auto;
+        align-self: auto;
+    }
+    // fallback for IE9 and below
+    @if $oldIE=='false' {
+        @include OldIE() {
+            display: inline-block;
+            vertical-align: top;
+            letter-spacing: normal;
+            text-rendering: auto;
+            zoom: 1;
+        }
+    }
+}
+
+/* Large devices Desktops (>=1200px)*/
+
+@include MediaQueries($desktop) {
+    .col-lg__1-12 {
+        width: 8.33333333%;
+    }
+    .col-lg__2-12 {
+        width: 16.66666667%;
+    }
+    .col-lg__3-12 {
+        width: 25%;
+    }
+    .col-lg__4-12 {
+        width: 33.33333333%;
+    }
+    .col-lg__5-12 {
+        width: 41.66666667%;
+    }
+    .col-lg__6-12 {
+        width: 50%;
+    }
+    .col-lg__7-12 {
+        width: 58.33333333%;
+    }
+    .col-lg__8-12 {
+        width: 66.66666667%;
+    }
+    .col-lg__9-12 {
+        width: 75%;
+    }
+    .col-lg__10-12 {
+        width: 83.33333333%;
+    }
+    .col-lg__11-12 {
+        width: 91.66666667%;
+    }
+    .col-lg__full {
+        width: 100%;
+    }
+
+    .col-lg__2-10 {
+        width: 20%;
+    }
+
+    .tf-g__space-lg-20 {
+        [class*="col-"] {
+            padding: 0 20px;
+        }
+        [class*="col-"]:first-child {
+            padding-left: 0;
+        }
+        [class*="col-"]:last-child {
+            padding-right: 0;
+        }
+    }
+    .tf-g__space-lg-30 {
+        [class*="col-"] {
+            padding: 0 30px;
+        }
+        [class*="col-"]:first-child {
+            padding-left: 0;
+        }
+        [class*="col-"]:last-child {
+            padding-right: 0;
+        }
+    }
+    .col-20-percent{
+        width: 20%;
+    }
+}
+
+
+/* Medium devices Desktops (>=992px) */
+
+@include MediaQueries($phablet) {
+    .col-md__1-12 {
+        width: 8.33333333%;
+    }
+    .col-md__2-12 {
+        width: 16.66666667%;
+    }
+    .col-md__3-12 {
+        width: 25%;
+    }
+    .col-md__4-12 {
+        width: 33.33333333%;
+    }
+    .col-md__5-12 {
+        width: 41.66666667%;
+    }
+    .col-md__6-12 {
+        width: 50%;
+    }
+    .col-md__7-12 {
+        width: 58.33333333%;
+    }
+    .col-md__8-12 {
+        width: 66.66666667%;
+    }
+    .col-md__9-12 {
+        width: 75%;
+    }
+    .col-md__10-12 {
+        width: 83.33333333%;
+    }
+    .col-md__11-12 {
+        width: 91.66666667%;
+    }
+    .col-md__full {
+        width: 100%;
+    }
+    .tf-g__vertical-space-md-10 {
+        [class*="col-"] {
+            margin: 10px 0 0;
+        }
+    }
+    .tf-g__vertical-space-md-20 {
+        [class*="col-"] {
+            margin: 20px 0 0;
+        }
+    }
+}
+
+
+/* Small devices Tablets (>=768px) */
+
+@include MediaQueries($tablet) {
+    .col-sm__1-12 {
+        width: 8.33333333%;
+    }
+    .col-sm__2-12 {
+        width: 16.66666667%;
+    }
+    .col-sm__3-12 {
+        width: 25%;
+    }
+    .col-sm__4-12 {
+        width: 33.33333333%;
+    }
+    .col-sm__5-12 {
+        width: 41.66666667%;
+    }
+    .col-sm__6-12 {
+        width: 50%;
+    }
+    .col-sm__7-12 {
+        width: 58.33333333%;
+    }
+    .col-sm__8-12 {
+        width: 66.66666667%;
+    }
+    .col-sm__9-12 {
+        width: 75%;
+    }
+    .col-sm__10-12 {
+        width: 83.33333333%;
+    }
+    .col-sm__11-12 {
+        width: 91.66666667%;
+    }
+    .col-sm__full {
+        width: 100%;
+    }
+    .tf-g__vertical-space-sm-10 {
+        [class*="col-"] {
+            margin: 10px 0;
+        }
+    }
+    .tf-g__vertical-space-sm-20 {
+        [class*="col-"] {
+            margin: 20px 0 0;
+        }
+    }
+}
+
+
+/* Extra small devices - Phones (<=767px) */
+
+@include MediaQueries($mobile) {
+    .col-xs__1-12 {
+        width: 8.33333333%;
+    }
+    .col-xs__2-12 {
+        width: 16.66666667%;
+    }
+    .col-xs__3-12 {
+        width: 25%;
+    }
+    .col-xs__4-12 {
+        width: 33.33333333%;
+    }
+    .col-xs__5-12 {
+        width: 41.66666667%;
+    }
+    .col-xs__6-12 {
+        width: 50%;
+    }
+    .col-xs__7-12 {
+        width: 58.33333333%;
+    }
+    .col-xs__8-12 {
+        width: 66.66666667%;
+    }
+    .col-xs__9-12 {
+        width: 75%;
+    }
+    .col-xs__10-12 {
+        width: 83.33333333%;
+    }
+    .col-xs__11-12 {
+        width: 91.66666667%;
+    }
+    .col-xs__full {
+        width: 100%;
+    }
+    .tf-g__vertical-space-xs-10 {
+        [class*="col-"] {
+            margin: 10px 0;
+        }
+    }
+    .tf-g__vertical-space-xs-20 {
+        [class*="col-"] {
+            margin: 20px 0 0;
+        }
+    }
+}
+
+/* Custom width for special scenarios*/
+.col-custom_3265 {
+    width: 32.65%;
+}

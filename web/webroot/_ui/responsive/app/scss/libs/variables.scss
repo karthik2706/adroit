@@ -1,0 +1,178 @@
+// ****************************************
+// media-queries
+// ****************************************
+
+/*
+Mobile: Small
+min: 320 portrait
+max: 600 landscape
+
+Tablet: Medium
+601 - 800 portrait
+
+Tablet landscape / Desktop: Large
+801 - 1200
+
+Desktop: xLarge
+1201 - 1600
+*/
+
+// breakpoints
+// breakpoints
+$cs__xsmall: 48em; // 48x16 = 768px
+$cs__xsmall-min: ($cs__xsmall - 0.0625); // 767px
+$cs__medium: 62em; // 62x16 = 992px
+$cs__medium-min: ($cs__medium - 0.0625); // 991px
+$cs__large: 75em; // 76x16 = 1200px
+$cs__large-min: ($cs__large - 0.0625); // 1119px
+$cs__xlarge: 100em; // 100x16   = 1600px
+$screen: unquote("only screen");
+$landscape: unquote("#{$screen} and (orientation: landscape)");
+$portrait: unquote("#{$screen} and (orientation: portrait)");
+$mobile: unquote("#{$screen}");
+$tablet: unquote("#{$screen} and (min-width: #{$cs__xsmall})");
+$phablet: unquote("#{$screen} and (min-width: #{$cs__medium})"); //Bigger tablets(phablets)
+$desktop: unquote("#{$screen} and (min-width: #{$cs__large})");
+$between-mobile-tablet: unquote("#{$screen} and (min-width: #{$cs__xsmall}) and (max-width: #{$cs__medium-min})");
+$between-tablet-phablet: unquote("#{$screen} and (min-width: #{$cs__medium}) and (max-width: #{$cs__large-min})");
+$print: unquote("print");
+// $tablet-and-below: unquote("#{$screen} and (max-width: #{$cs__medium})");
+// $tablet-and-below-landscape: unquote("#{$screen} and (max-width: #{$cs__medium}) and (orientation: landscape)");
+// $tablet-and-above: unquote("#{$screen} and (min-width: #{$cs__small-min})");
+// $desktop-and-below: unquote("#{$screen} and (max-width: #{$cs__large})");
+// $desktop-and-above: unquote("#{$screen} and (min-width: #{$cs__medium})");
+// $xlarge-and-below: unquote("#{$screen} and (max-width: #{$cs__large-min})");
+// $xlarge: unquote("#{$screen} and (min-width: #{$cs__large-min}) and (max-width: #{$cs__xlarge})");
+// $xlarge-and-above: unquote("#{$screen} and (min-width: #{$cs__large-min})");
+// $retina: unquote("#{$screen} and (-webkit-min-device-pixel-ratio: 2), #{$screen} and (min--moz-device-pixel-ratio: 2), #{$screen} and (-o-min-device-pixel-ratio: 2/1), #{$screen} and (min-device-pixel-ratio: 2), #{$screen} and (min-resolution: 192dpi), #{$screen} and (min-resolution: 2dppx)");
+// $between-desktop-tablet: unquote("#{$screen} and (min-width: #{$cs__medium-min}) and (max-width: 64em)"); // 800px - 1024px
+// $tablet-and-between-desktop-tablet: unquote("#{$screen} and (min-width: #{$cs__small-min}) and (max-width: 64em)"); // 601px - 1024px
+// $below-desktop-tablet: unquote("#{$screen} and (max-width: 64em)"); // <1024px
+// $desktop-tablet-and-above: unquote("#{$screen} and (min-width: 64em)"); // >1024px
+// $above-large-desktop: unquote("#{$screen} and (min-width: #{$cs__xlarge})");
+
+//Animation ===============================================
+$nav-animation-duration: 0.6s;
+$transition__default: cubic-bezier(0.77, 0, 0.175, 1);
+
+// TYPO Sizes=========================================
+$base__font-size: 10;
+$font-size-h1: 4.6rem;
+$font-size-h2: 3.6rem;
+$font-size-h3: 2.4rem;
+$font-size-h4: 2.3rem;
+$font-size-h5: 2.0rem;
+$font-size-h6: 1.5rem;
+$font-size-p: 1.2rem;
+$font-size-7: 0.7rem;
+$font-size-10: 1.0rem;
+$font-size-11: 1.1rem;
+$font-size-12: 1.2rem;
+$font-size-13: 1.3rem;
+$font-size-14: 1.4rem;
+$font-size-15: 1.5rem;
+$font-size-16: 1.6rem;
+$font-size-17: 1.7rem;
+$font-size-18: 1.8rem;
+$font-size-20: 2.0rem;
+$font-size-21: 2.1rem;
+$font-size-22: 2.2rem;
+$font-size-23: 2.3rem;
+$font-size-24: 2.4rem;
+$font-size-25: 2.5rem;
+$font-size-26: 2.6rem;
+$font-size-27: 2.7rem;
+$font-size-28: 2.8rem;
+$font-size-30: 3.0rem;
+$font-size-31: 3.1rem;
+$font-size-32: 3.2rem;
+$font-size-34: 3.4rem;
+$font-size-35: 3.5rem;
+$font-size-36: 3.6rem;
+$font-size-40: 4.0rem;
+$font-size-44: 4.4rem;
+$font-size-50: 5.0rem;
+$font-size-60: 6.0rem;
+$font-size-80: 8.0rem;
+$font-size-a: 0.9rem;
+$font-size-nav: 1.6rem;
+$font-size-link: 1.1rem;
+$font-size-link-mobile: 1.1rem;
+$font-weight-extra-light: 100;
+$font-weight-lighter: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-extra-large-bold: 900;
+
+$font-size-title: 2.0rem;
+$font-size-sub-title: 1.6rem;
+$font-size-small-text: 1.2em;
+
+//Font families
+
+
+//== Modals
+//
+//##
+$zindex-modal-background: 1040 !default;
+$zindex-modal: 1050 !default;
+$border-radius-large: 6px !default;
+//** Padding applied to the modal body
+$modal-inner-padding: 15px !default;
+
+//** Padding applied to the modal title
+$modal-title-padding: 15px !default;
+//** Modal title line-height
+$modal-header-border-color: #e5e5e5 !default;
+$line-height-base: 1.428571429 !default; // 20/14
+$modal-footer-border-color: $modal-header-border-color !default;
+$modal-title-line-height: $line-height-base !default;
+
+//** Background color of modal content area
+$modal-content-bg: #fff !default;
+//** Modal content border color
+$modal-content-border-color: rgba(0,0,0,.2) !default;
+//** Modal content border color **for IE8**
+$modal-content-fallback-border-color: #999 !default;
+
+//** Modal backdrop background color
+$modal-backdrop-bg: #000 !default;
+//** Modal backdrop opacity
+$modal-backdrop-opacity: 0.5 !default;
+//** Modal header border color
+$modal-header-border-color: #e5e5e5 !default;
+//** Modal footer border color
+
+$modal-lg: 900px !default;
+$modal-md: 600px !default;
+$modal-sm: 300px !default;
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+@mixin translate($x, $y) {
+    transform: translate($x, $y);
+}
+@mixin transition-transform($transition...) {
+    transition: transform $transition;
+}
+@mixin box-shadow($shadow...) {
+    box-shadow: $shadow;
+}
+@mixin opacity($opacity) {
+    opacity: $opacity;
+}
+@mixin clearfix() {
+    &:after,
+    &:before {
+        content: " "; // 1
+        display: table; // 2
+    }
+
+    &:after {
+        clear: both;
+    }
+}
