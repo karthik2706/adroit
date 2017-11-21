@@ -29,7 +29,7 @@ $ gulp
 ## Create FE Components
 Please use the below command to create any new command:
 ```bash
-$ node generators --dir <director name> --name <component-name>
+$ node generators --name <component-name> --dir <director name> 
 ```
 
 (See more info in 'generators/README.md' file)
