@@ -3,11 +3,14 @@
  * @version {version}
  * @since {date}
  */
-'use strict';
 
-//dependencies
+// dependencies
+import './{component-name}.hbs';
+import './{component-name}.scss';
+
 const compRegisterRef = require('lib/component-register');
-const registerComponent = compRegisterRef.registerComponent;
+
+const { registerComponent } = compRegisterRef;
 
 /**
  * The definition of the component. Each DOM element will
@@ -28,124 +31,124 @@ export const styleDefinition = '{component-name}';
  * @return {object} Component instance.
  */
 function create{separate-component-name}Instance() {
-    /**
-     * Component instance.
-     * @type {Object}
-     */
-    const instance = {};
+	/**
+	 * Component instance.
+	 * @type {Object}
+	 */
+	const instance = {};
 
-    /**
-     * By setting `instance.domRefs` the baseComponent will replace the value
-     * of each keys in `instance.domRefs.first` with single elements found
-     * in `instance.element`. Same for `instance.domRefs.all`, but each key
-     * will have an array of elements.
-     *
-     * `first` example: The value of `childEl` will be a `HTMLElement`
-     * `all` example: The value of `rows` will be an `Array` of `HTMLElement`
-     * @type {Object}
-     */
-    // instance.domRefs = {
-    //   definition: styleDefinition,
-    //   first: {
-    //     childEl: '__child'
-    //   },
-    //   all: {
-    //     rows: '__row'
-    //   }
-    // };
+	/**
+	 * By setting `instance.domRefs` the baseComponent will replace the value
+	 * of each keys in `instance.domRefs.first` with single elements found
+	 * in `instance.element`. Same for `instance.domRefs.all`, but each key
+	 * will have an array of elements.
+	 *
+	 * `first` example: The value of `childEl` will be a `HTMLElement`
+	 * `all` example: The value of `rows` will be an `Array` of `HTMLElement`
+	 * @type {Object}
+	 */
+	// instance.domRefs = {
+	//   definition: styleDefinition,
+	//   first: {
+	//     childEl: '__child'
+	//   },
+	//   all: {
+	//     rows: '__row'
+	//   }
+	// };
 
-    /** @type {Object} */
-    // const singleRefs = instance.domRefs.first;
+	/** @type {Object} */
+	// const singleRefs = instance.domRefs.first;
 
-    /** @type {Object} */
-    // const listRefs = instance.domRefs.all;
+	/** @type {Object} */
+	// const listRefs = instance.domRefs.all;
 
-    /**
-     * `created` is called before `attached`. Can be used to pass data to
-     * childrens `params` property.
-     */
-    // instance.created = () => {
-    //   forEach(instance.children, updateChildParams);
-    // };
+	/**
+	 * `created` is called before `attached`. Can be used to pass data to
+	 * childrens `params` property.
+	 */
+	// instance.created = () => {
+	//   forEach(instance.children, updateChildParams);
+	// };
 
-    /**
-     * Update the `instance.params` for `childInstance`.
-     *
-     * @param {object} childInstance
-     */
-    // function updateChildParams(childInstance) {
-    //   childInstance.receiveNewParams({
-    //     id: instance.attribute.id,
-    //     updateId: onIdChanged
-    //   });
-    // }
+	/**
+	 * Update the `instance.params` for `childInstance`.
+	 *
+	 * @param {object} childInstance
+	 */
+	// function updateChildParams(childInstance) {
+	//   childInstance.receiveNewParams({
+	//     id: instance.attribute.id,
+	//     updateId: onIdChanged
+	//   });
+	// }
 
-    /**
-     * The `instance.params` object was changed from parent calling `instance.receiveNewParams`.
-     * Properties and callback functions can be dealt with or passed down to
-     * child components.
-     */
-    // instance.onNewParamsReceived = () => {
-    //   forEach(instance.children, child => {
-    //     child.receiveNewParams({
-    //       updateId: instance.params.updateId
-    //     });
-    //   });
-    // };
+	/**
+	 * The `instance.params` object was changed from parent calling `instance.receiveNewParams`.
+	 * Properties and callback functions can be dealt with or passed down to
+	 * child components.
+	 */
+	// instance.onNewParamsReceived = () => {
+	//   forEach(instance.children, child => {
+	//     child.receiveNewParams({
+	//       updateId: instance.params.updateId
+	//     });
+	//   });
+	// };
 
-    /**
-     * The DOM Element was added to the DOM.
-     */
-    instance.attached = () => {
-        initDOMReferences();
-        init();
-        addListeners();
-    };
+	/**
+	 * Initialize any DOM elements which can be found within the hbs file for
+	 * this component.
+	 */
+	function initDOMReferences() {
+		// myEl = domUtil.findFirst('.'
+		//  .concat(exports.styleDefinition)
+		//  .concat('__my-el'),
+		//  instance.element
+		//  );
+	}
 
-    /**
-     * The DOM Element was removed from the DOM.
-     * Dealloc variables and removes any added listeners that was NOT added
-     * through `instance.addEventListener`.
-     */
-    instance.detached = () => {
-        // console.log('detached!', instance.element);
-        dispose();
-    };
+	/**
+	 * Logic to run when component is ready
+	 */
+	function init() {}
 
-    /**
-     * Initialize any DOM elements which can be found within the hbs file for
-     * this component.
-     */
-    function initDOMReferences() {
-        //myEl = domUtil.findFirst('.'
-        //  .concat(exports.styleDefinition)
-        //  .concat('__my-el'),
-        //  instance.element
-        //  );
-    }
+	/**
+	 * Append listeners to the element.
+	 */
+	function addListeners() {
+		// TODO remove inline comments, just example code.
+		// To attach an event, use one of the following methods.
+		// No need remove the listener in `instance.detached`
+		// instance.addEventListener('click', onClick); //attached to `instance.element`
+		// instance.addEventListener('click', onClick, myEl); //attached to `myEl`
+	}
 
-    /**
-     * Logic to run when component is ready
-     */
-    function init() {}
+	/**
+	 * Dealloc variables and removes any added listeners.
+	 */
+	function dispose() {}
 
-    /**
-     * Append listeners to the element.
-     */
-    function addListeners() {
-        //TODO remove inline comments, just example code.
-        //To attach an event, use one of the following methods.
-        //No need remove the listener in `instance.detached`
-        //instance.addEventListener('click', onClick); //attached to `instance.element`
-        //instance.addEventListener('click', onClick, myEl); //attached to `myEl`
-    }
+	/**
+	 * The DOM Element was added to the DOM.
+	 */
+	instance.attached = () => {
+		initDOMReferences();
+		init();
+		addListeners();
+	};
 
-    /**
-     * Dealloc variables and removes any added listeners.
-     */
-    function dispose() {}
+	/**
+	 * The DOM Element was removed from the DOM.
+	 * Dealloc variables and removes any added listeners that was NOT added
+	 * through `instance.addEventListener`.
+	 */
+	instance.detached = () => {
+		// console.log('detached!', instance.element);
+		dispose();
+	};
 
-    return instance;
+	return instance;
 }
 
 registerComponent(componentReference, create{separate-component-name}Instance);

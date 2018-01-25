@@ -1,0 +1,7 @@
+{
+	"editor.formatOnSave": true,
+	"[handlebars]": {
+		"editor.formatOnSave": false
+	},
+	"editor.renderWhitespace": "all"
+}
