@@ -1,0 +1,52 @@
+// Ensure media queries are used in mobile-first approach
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $class == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  // @else if $class == md {
+  //   @media (min-width: 992px) { @content; }
+  // }
+  //
+  // @else if $class == lg {
+  //   @media (min-width: 1200px) { @content; }
+  // }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+// Using the Mixin Within Your Code
+// -------------------
+// Built into Sass is the ability to nest our media queries within the primary code of an area we are designing. With this technique, everything you’re doing to style a specific area can be done in the same place without separating the media query into a different file or a different region in the code. Using our mixin would allow us to do the following.
+// aside.primary {
+//   float: right;
+//   width: 350px;
+//   @include breakpoint(sm) {
+//     float: none;
+//     width: 100%;
+//   }
+// }
+// This would turn off our float and make the width 100% for both our sm and xs breakpoints. From a mobile-first perspective, we can make the same code even more concise since our mobile code version is the default behavior of the aside, a block-level tag.
+// aside.primary {
+//   @include breakpoint(md) {
+//     float: right;
+//     width: 350px;
+//   }
+// }
+// This version floats the aside with a set width only for the md breakpoint and above, leaving the xs and sm breakpoints alone.
