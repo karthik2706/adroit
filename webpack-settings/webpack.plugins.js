@@ -27,9 +27,7 @@ module.exports = function getPlugins(options) {
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
-			jQuery: 'jquery',
-			Popper: 'popper.js',
-			toastr: 'toastr'
+			jQuery: 'jquery'
 		}),
 		options.extractCSS,
 		new CopyWebpackPlugin([
