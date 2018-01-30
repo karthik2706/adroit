@@ -13,7 +13,7 @@ const VERSION = 'v1-0-0';
 const SOURCE_ROOT_FOLDER = 'src';
 
 // Common JS Library/Code
-const JS_LIB = `${SOURCE_ROOT_FOLDER}/lib`;
+const JS_LIB = `${SOURCE_ROOT_FOLDER}/js-libs`;
 
 // Handlebars
 const HANDLEBARS_DIR = `${SOURCE_ROOT_FOLDER}/hbs-app`;

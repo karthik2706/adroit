@@ -1,4 +1,2 @@
-@import '/libs/breakpoints.scss';
-@import '/theme.scss';
-@import '/libs/form.scss';
-@import '/libs/buttons';
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
