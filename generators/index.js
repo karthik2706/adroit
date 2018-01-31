@@ -22,6 +22,8 @@ if (typeof argv.name !== 'string' || typeof argv.dir !== 'string') {
 }
 
 const componentName = argv.name;
+const dirName = originalDir;
+
 let dir = getDirPath(argv.dir);
 
 if (originalDir.length > 0) {
@@ -38,6 +40,10 @@ const regexpObjectList = [
 	{
 		pattern: '{component-name}',
 		newSubStr: componentName
+	},
+	{
+		pattern: '{controller-name}',
+		newSubStr: (dirName.length) ? dirName +'--'+ componentName : componentName
 	},
 	{
 		pattern: '{separate-component-name}',

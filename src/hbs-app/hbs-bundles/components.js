@@ -1,3 +1,12 @@
+import { Application } from 'stimulus';
+import { definitionsFromContext } from 'stimulus/webpack-helpers';
+
+const application = Application.start();
+
+const context = require.context('../fe-components', true, /\.js$/);
+
+application.load(definitionsFromContext(context));
+
 // SCSS - Dependency
 require('stylesheets/index.scss');
 
@@ -9,5 +18,4 @@ require('handlebars/pages/index.hbs');
 require('handlebars/pages/home-page.hbs');
 
 // HBS - Components
-require('fe-components/sample-component/sample-component');
-require('fe-components/bootstrap-sample/bootstrap-sample');
+
