@@ -21,7 +21,9 @@
         "url": "https://github.com/raviroshan/adroit"
     },
     "author": "Karthik Naidu",
-    "contributors": ["Ravi Roshan"],
+    "contributors": [
+        "Ravi Roshan"
+    ],
     "license": "MIT",
     "devDependencies": {
         "assemble-webpack": "^2.0.2",

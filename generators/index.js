@@ -1,8 +1,6 @@
 'use strict';
 
 const argv = require('minimist')(process.argv.slice(2));
-
-// const configFile = require('../config');
 const configFile = require('../project-config');
 const componentsDir = configFile.HBS_FE_COMPONENTS;
 const capitalize = require('./lib/capitalize-first-letter');

@@ -12,7 +12,7 @@ module.exports = function getEntriesConfig(options) {
 		entries[fileNameWithoutExt] = `${dirName}/${file}`;
 	});
 
-	entries.vendor = ['bootstrap', 'js-libs/component-register.js'];
+	entries.vendor = ['bootstrap', 'lib/component-register.js'];
 
 	return entries;
 };

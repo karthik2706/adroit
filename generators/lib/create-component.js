@@ -14,6 +14,7 @@ const isWindows = require('./is-windows');
 const replaceAll = require('./string-replace-all');
 const replaceFirst = require('./string-replace-first');
 const generateFile = require('./generate-file');
+const configFile = require('../../project-config');
 const appendToWebpackComponentsFile = require('./append-to-web-components-file.js');
 
 let compName = '';
@@ -132,7 +133,7 @@ function getPath(fileName) {
 }
 
 function isComponentsRoot(path) {
-	let componentsDir = require('../../config').componentsDir;
+	let componentsDir = configFile.HBS_FE_COMPONENTS;
 	componentsDir = componentsDir.split('/');
 	const rootComponentDir = componentsDir[componentsDir.length - 2];
 
