@@ -6,8 +6,8 @@ Front End code repo for **Adroit Site Generator kit**
 
 ## Prerequisites
 
-* Node v8.3.0
-* NPM v5.6.0
+* Node v8.3.0 + 
+* NPM v5.6.0 + 
 
 ### Technologies
 
@@ -18,17 +18,11 @@ The client side application is comprised of the following technologies:
 * [Handlebars](http://assemble.io/)
 * [Assemble](http://assemble.io/)
 
-#### For Client Side
-
-* [ReactJS](http://react-bootstrap.github.io/)
-* [Redux](http://redux.js.org/)
-* [React-Router](https://github.com/rackt/react-router)
 
 #### Build Tools, Transpiler & Package Manager
 
 * [Babel](https://babeljs.io/)
 * [Webpack](https://webpack.js.org/)
-* [Gulp](https://gulpjs.com/) - Only for Assemble.io plugin as that is not available in Webpack
 * [NPM](https://www.npmjs.com/)
 
 ### Developer Tools
