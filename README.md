@@ -2,7 +2,7 @@
 
 ## What is this repository for?
 
-Front End code repo for **Adroit Site Generator kit**
+Code repo for **Adroit Framework**
 
 ## Prerequisites
 
