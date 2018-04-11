@@ -13,11 +13,19 @@ Code repo for **Adroit Framework**
 
 The client side application is comprised of the following technologies:
 
-#### For generating Static Markup - AEM Components on Server Side
+#### For generating Static Markup on Server Side
 
 * [Handlebars](http://assemble.io/)
-* [Assemble](http://assemble.io/)
+Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.
 
+* [Assemble](http://assemble.io/)
+More than 130 Handlebars helpers in ~20 categories. Helpers can be used with Assemble, Generate, Verb, Ghost,  webpack-handlebars, gulp-handlebars, grunt-handlebars, consolidate, or any node.js/Handlebars project.
+
+### HTML, CSS and JavaScript
+
+* BEM - Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development (http://getbem.com/)
+* SASS - Sass is the most mature, stable, and powerful professional grade CSS extension language in the world (https://sass-lang.com/)
+* JavaScript - We used Flux architecture which was developed by facebook developers. Facebook uses flux for building client-side web applications. (https://facebook.github.io/flux/)
 
 #### Build Tools, Transpiler & Package Manager
 
