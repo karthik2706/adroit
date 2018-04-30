@@ -13,11 +13,11 @@ const flight = require('flightjs');
 */
 
 /* Component definition */
-function createBootstrapsampleInstance() {
+function createSampleflightInstance() {
 	// add attributes here
 	this.attributes({
 		// selectors
-		header: '.bootstrap-sample__js-header'
+		// helloText: '.sample-flight__js-elem',
 		// variables
 		// someVariable: 1
 	});
@@ -30,15 +30,15 @@ function createBootstrapsampleInstance() {
 	}); */
 
 	// custom methods
-	this.customMethod = function () {
-		alert(this.select('header').html());
-	};
+	/*  this.customMethod = function () {
+		    alert(this.select('helloText').html());
+	};  */
 
 	// add event listeners to the component
 	this.addListeners = function () {
-		this.on('click', {
-			header: this.customMethod
-		});
+		/* this.on('click', {
+			helloText: this.customMethod
+		}); */
 	};
 
 	// after initializing the component
@@ -48,5 +48,5 @@ function createBootstrapsampleInstance() {
 }
 
 /* Creat & Attach the component to a DOM node */
-const componentInstance = flight.component(createBootstrapsampleInstance);
-componentInstance.attachTo('.app-js__bootstrap-sample');
+const componentInstance = flight.component(createSampleflightInstance);
+componentInstance.attachTo('.app-js__sample-flight');
