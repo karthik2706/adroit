@@ -13,6 +13,10 @@
     "list-files": "^1.1.3",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "recursive-readdir": "^2.2.1"
+    "recursive-readdir": "^2.2.1",
+    "flight-with-child-components": "4.1.0",
+    "flight-with-resources": "3.0.0",
+    "flight-with-state": "8.1.0",
+    "flightjs": "1.5.2"
   }
 }
